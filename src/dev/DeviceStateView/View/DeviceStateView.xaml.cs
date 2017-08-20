@@ -25,12 +25,16 @@ namespace DeviceStateView.View
             new Uri(@"../Resource/conn.png", UriKind.Relative));
         protected static BitmapImage DisConnImage = new BitmapImage(
             new Uri(@"../Resource/disconn.png", UriKind.Relative));
+        protected static Brush FontColor_DisConn = new SolidColorBrush(Colors.Gray);
+        protected static Brush FontColor_Conn = new SolidColorBrush(Colors.Black);
 
         public DeviceStateView()
         {
             InitializeComponent();
 
             this.ConnectImage.Source = DeviceStateView.DisConnImage;
+            this.DeviceNameText.Foreground = DeviceStateView.FontColor_DisConn;
+            this.DevicePortText.Foreground = DeviceStateView.FontColor_DisConn;
         }
 
         #region Properties and fields
@@ -161,10 +165,14 @@ namespace DeviceStateView.View
             if (NewValue)
             {
                 DstView.ConnectImage.Source = DeviceStateView.ConnImage;
+                DstView.DeviceNameText.Foreground = DeviceStateView.FontColor_Conn;
+                DstView.DevicePortText.Foreground = DeviceStateView.FontColor_Conn;
             }
             else
             {
                 DstView.ConnectImage.Source = DeviceStateView.DisConnImage;
+                DstView.DeviceNameText.Foreground = DeviceStateView.FontColor_DisConn;
+                DstView.DevicePortText.Foreground = DeviceStateView.FontColor_DisConn;
             }
         }
         #endregion
