@@ -29,6 +29,8 @@ namespace DeviceStateView.View
         public DeviceStateView()
         {
             InitializeComponent();
+
+            this.ConnectImage.Source = DeviceStateView.DisConnImage;
         }
 
         #region Properties and fields
