@@ -18,10 +18,35 @@ namespace DeviceStateView.ViewModel
         public MainWindowViewModel()
         {
             this.Init();
+
+            this.DeviceName = "DeviecName";
+            this.DevicePort = "DevicePort";
         }
         #endregion
 
         #region Public properties
+        protected string _DeviceName;
+        public string DeviceName
+        {
+            get { return this._DeviceName; }
+            set
+            {
+                this._DeviceName = value;
+                this.DevStateViewModel.DeviceName = value;
+                this.RaisePropertyChanged("DeviceName");
+            }
+        }
+        protected string _DevicePort;
+        public string DevicePort
+        {
+            get { return this._DevicePort; }
+            set
+            {
+                this._DevicePort = value;
+                this.DevStateViewModel.DevicePort = value;
+                this.RaisePropertyChanged("DevicePort");
+            }
+        }
         protected string _InputValue1;
         public string InputValue1
         {
