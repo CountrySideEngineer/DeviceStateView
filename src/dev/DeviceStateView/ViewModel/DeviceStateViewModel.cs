@@ -26,11 +26,8 @@ namespace DeviceStateView.ViewModel
             get { return this._DeviceName; }
             set
             {
-                if (this.IsConnected)
-                {
-                    this._DeviceName = value;
-                    this.RaisePropertyChanged("DeviceName");
-                }
+                this._DeviceName = value;
+                this.RaisePropertyChanged("DeviceName");
             }
         }
         protected string _DevicePort;
@@ -39,11 +36,8 @@ namespace DeviceStateView.ViewModel
             get { return this._DevicePort; }
             set
             {
-                if (this.IsConnected)
-                {
-                    this._DevicePort = value;
-                    this.RaisePropertyChanged("DevicePort");
-                }
+                this._DevicePort = value;
+                this.RaisePropertyChanged("DevicePort");
             }
         }
 
@@ -159,9 +153,6 @@ namespace DeviceStateView.ViewModel
         /// </summary>
         protected void Clear()
         {
-            this.DeviceName = "";
-            this.DevicePort = "";
-
             this.Value1 = "";
             this.Value2 = "";
             this.Value3 = "";
